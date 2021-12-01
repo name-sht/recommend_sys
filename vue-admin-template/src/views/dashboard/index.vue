@@ -1,0 +1,33 @@
+<template>
+  <div class="dashboard-container">
+    <div class="dashboard-text">   姓名: {{ name }}</div>
+    <div class="dashboard-text">证件号码: {{ name }}</div>
+    <div class="dashboard-text">推荐单位: {{ name }}</div>
+    <div class="dashboard-text">本科专业: {{ name }}</div>
+  </div>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  name: 'Dashboard',
+  computed: {
+    ...mapGetters([
+      'name'
+    ])
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.dashboard {
+  &-container {
+    margin: 30px;
+  }
+  &-text {
+    font-size: 30px;
+    line-height: 46px;
+  }
+}
+</style>
