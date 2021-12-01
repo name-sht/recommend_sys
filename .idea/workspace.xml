@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="461f23eb-1566-4090-afd6-e302a8f05642" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1638345817719</updated>
-      <workItem from="1638345825202" duration="11712000" />
+      <workItem from="1638345825202" duration="12259000" />
     </task>
     <servers />
   </component>
