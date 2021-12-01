@@ -1,0 +1,8 @@
+{
+  "name": "recommend_system",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "vue-image-crop-upload": "^3.0.3"
+  }
+}
