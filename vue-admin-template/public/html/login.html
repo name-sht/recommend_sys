@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <script>
+        function tz1(){
+            window.location.href='./index.html';
+        }
+        function tz2(){
+            window.location.href='./register.html';
+        }
+    </script>
+
+</head>
+<body>
+    <div id="login">
+        <h1>预推免申报系统</h1>
+         <form method="post">
+            <input type="text" required="required" placeholder="手机号/身份证号/邮箱" name="u"></input>
+            <input type="password" required="required" placeholder="密码" name="p"></input>
+             <select name="gender" size="1" >
+                 <option value="1">学生</option>
+                 <option value="2">教师</option>
+             </select>
+             <input type="submit" value= "登录" class="but_log">
+            <button class="but_reg"  onclick=tz2()>注册</button>
+            <a class="but_for"  href='./forget.html'>忘记密码？</a>
+        </form>
+    </div>
+
+</body>
+</html>
