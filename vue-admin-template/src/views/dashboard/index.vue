@@ -1,9 +1,8 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">   姓名: {{ name }}</div>
-    <div class="dashboard-text">证件号码: {{ name }}</div>
-    <div class="dashboard-text">推荐单位: {{ name }}</div>
-    <div class="dashboard-text">本科专业: {{ name }}</div>
+    <div class="dashboard-text">用户: {{ name }}</div>
+    <div class="dashboard-text">学校: {{ university }}</div>
+    <div class="dashboard-text">专业: {{ major }}</div>
   </div>
 </template>
 
@@ -11,10 +10,11 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Dashboard',
   computed: {
     ...mapGetters([
-      'name'
+      'name',
+      'university',
+      'major'
     ])
   }
 }
@@ -23,9 +23,15 @@ export default {
 <style lang="scss" scoped>
 .dashboard {
   &-container {
-    margin: 30px;
+    left: 30%;
+    width: 40%;
+    top: 100px;
+    height: 400px;
+    position: absolute;
+    background: #c9ced5;
   }
   &-text {
+    margin: 60px;
     font-size: 30px;
     line-height: 46px;
   }

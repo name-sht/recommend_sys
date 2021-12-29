@@ -1,61 +1,55 @@
 <template>
   <div class="app-container">
-    <el-table
-      v-loading="listLoading"
-      :data="list"
-      element-loading-text="Loading"
-      border
-      fit
-      highlight-current-row
-    >
-      <el-table-column align="center" label="导师" width="200">
-        <template slot-scope="scope">
-          {{ scope.$index }}
+    <el-table v-loading="loading" :data="trData" stripe style="width: 100%">
+      <el-table-column prop="university" label="志愿学校" />
+      <el-table-column prop="major" label="志愿专业" />
+      <el-table-column label="录取状态">
+        <template slot-scope="props">
+          <div v-if="props.row.isAdmitted === 1">
+            已录取</div>
+          <div v-else>
+            待录取</div>
         </template>
       </el-table-column>
-      <el-table-column label="专业名称" width="200">
-        <template slot-scope="scope">
-          {{ scope.row.title }}
+      <el-table-column label="操作">
+        <template slot-scope="props">
+          <div v-if="props.row.isAdmitted === 0">
+            尚未录取</div>
+          <div v-else-if="props.row.isConfirmed === 1">
+            已接受录取</div>
+          <div v-else-if= "get_admit===true">
+            已接受其他志愿</div>
+          <div v-else>
+            <el-button type="primary" size="mini" @click="admitted(props.row.applicationID)">接受</el-button>
+          </div>
         </template>
-      </el-table-column>
-      <el-table-column label="学校" width="200" align="center">
-        <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
-        </template>
-      </el-table-column>
-
-      <el-table-column align="center" prop="created_at" label="截止日期" width="200">
-        <template slot-scope="scope">
-          <i class="el-icon-time" />
-          <span>{{ scope.row.display_time }}</span>
-        </template>
-      </el-table-column>
-      <el-table-column class-name="status-col" label="确认" width="400" align="center">
-        <el-button type="primary" @click="onSubmit">接受录取</el-button>
-        <el-button @click="onCancel">拒绝录取</el-button>
       </el-table-column>
     </el-table>
   </div>
 </template>
 
 <script>
-import { getList } from '@/api/table'
-
+import { getData, postData } from '@/api/admission'
+import { mapGetters } from 'vuex'
 export default {
-  filters: {
-    statusFilter(status) {
-      const statusMap = {
-        published: 'success',
-        draft: 'gray',
-        deleted: 'danger'
-      }
-      return statusMap[status]
+  computed: {
+    ...mapGetters([
+      'name',
+      'university',
+      'major'
+    ]),
+    get_admit() {
+      const c = this.trData.map(
+        row => row.isConfirmed).reduce(
+        (acc, cur) => (cur + acc), 0
+      )
+      console.log(c)
+      if (c === 1) { return true } else { return false }
     }
   },
   data() {
     return {
-      list: null,
-      listLoading: true
+      trData: null
     }
   },
   created() {
@@ -63,11 +57,27 @@ export default {
   },
   methods: {
     fetchData() {
-      this.listLoading = true
-      getList().then(response => {
-        this.list = response.data.items
-        this.listLoading = false
+      const pData = this.name
+      getData(pData).then(response => {
+        this.trData = response.stuApplication
       })
+    },
+    admitted(id) {
+      new Promise((resolve, reject) => {
+        postData({ applicationID: id }).then(response => {
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
+      })
+      this.$message('change!')
+      this.fetchData()
+    },
+    hidden({ row, rowIndex }) {
+      if (row.isAdmitted === 0) {
+        return 'hid'
+      }
+      return ''
     }
   }
 }

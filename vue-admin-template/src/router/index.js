@@ -36,115 +36,130 @@ export const constantRoutes = [
     component: () => import('@/views/login/index'),
     hidden: true
   },
-
-  {
-    path: '/404',
-    component: () => import('@/views/404'),
-    hidden: true
-  },
-
   {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '首页',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '用户信息确认', icon: 'dashboard' }
+      meta: { title: '用户信息确认',
+        icon: 'dashboard',
+        noCache: true
+      }
     }]
-  },
+  }
+
+  // 404 page must be placed at the end !!!
+]
+export const asyncRoutes = [
 
   {
-    path: '/example',
+    path: '/',
     component: Layout,
-    redirect: '/example/table',
-    name: '学生录取',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
+    redirect: '/table',
+    name: '教师录取',
     children: [
       {
         path: 'table',
         name: '录取',
-        component: () => import('@/views/table/index'),
-        meta: { title: '录取（教师页面）', icon: 'table' }
+        component: () => import('@/views/teacher/index'),
+        meta: { title: '录取',
+          icon: 'table',
+          roles: ['teacher']
+        }
       }
 
     ]
   },
 
   {
-    path: '/form',
+    path: '/base',
     component: Layout,
     children: [
       {
         path: 'index',
         name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: '基础信息填写', icon: 'form' }
+        component: () => import('@/views/base/index'),
+        meta: { title: '基础信息填写',
+          icon: 'form',
+          roles: ['student']
+        }
       }
     ]
   },
 
   {
-    path: '/nested',
+    path: '/details',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
+    redirect: '/details/photo',
+    name: 'details',
     meta: {
       title: '详细信息填写',
-      icon: 'nested'
+      icon: 'nested',
+      roles: ['student']
     },
     children: [
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu0/index'),
-        name: 'Menu2',
-        meta: { title: '图片上传' }
+        path: 'photo',
+        component: () => import('@/views/details/photo/index'),
+        name: 'photo',
+        meta: { title: '图片上传',
+          noCache: true,
+          roles: ['student']
+        }
       },
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: '详细信息' },
+        path: 'detail',
+        component: () => import('@/views/details/detail/index'), // Parent router-view
+        name: 'detail',
+        meta: { title: '详细信息',
+          roles: ['student'] },
         children: [
           {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: '户档信息' }
+            path: 'profile',
+            component: () => import('@/views/details/detail/profile'),
+            name: 'profile',
+            meta: { title: '户档信息',
+              roles: ['student'] }
           },
           {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: '家庭成员信息' },
+            path: 'family',
+            component: () => import('@/views/details/detail/family'),
+            name: 'family',
+            meta: { title: '家庭成员信息',
+              roles: ['student'] },
             children: [
               {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: '家庭成员信息1' }
+                path: 'member1',
+                component: () => import('@/views/details/detail/family/member1'),
+                name: 'member1',
+                meta: { title: '家庭成员信息1',
+                  roles: ['student'] }
               },
               {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: '家庭成员信息2' }
-              }
-              ,
+                path: 'member2',
+                component: () => import('@/views/details/detail/family/member2'),
+                name: 'member2',
+                meta: { title: '家庭成员信息2',
+                  roles: ['student'] }
+              },
               {
-                path: 'menu1-2-3',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-3'),
-                name: 'Menu1-2-3',
-                meta: { title: '家庭成员信息3' }
+                path: 'member3',
+                component: () => import('@/views/details/detail/family/member3'),
+                name: 'member3',
+                meta: { title: '家庭成员信息3',
+                  roles: ['student'] }
               }
             ]
           },
           {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: '学习工作信息' }
+            path: 'study',
+            component: () => import('@/views/details/detail/study'),
+            name: 'study',
+            meta: { title: '学习工作信息',
+              roles: ['student'] }
           }
         ]
       }
@@ -159,7 +174,8 @@ export const constantRoutes = [
         path: 'index',
         name: 'Wish',
         component: () => import('@/views/wish/index'),
-        meta: { title: '志愿填报', icon: 'form' }
+        meta: { title: '志愿填报', icon: 'table',
+          roles: ['student'] }
       }
     ]
   },
@@ -169,20 +185,23 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/admission/table',
     name: '录取确认',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table',
         name: 'Table',
         component: () => import('@/views/admission/index'),
-        meta: { title: '录取确认', icon: 'table' }
+        meta: { title: '录取确认', icon: 'table',
+          roles: ['student'] }
       }
     ]
   },
-  // 404 page must be placed at the end !!!
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
   { path: '*', redirect: '/404', hidden: true }
 ]
-
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),

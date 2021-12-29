@@ -6,7 +6,10 @@ const getDefaultState = () => {
   return {
     token: getToken(),
     name: '',
-    avatar: ''
+    avatar: '',
+    major: '',
+    university: '',
+    roles: []
   }
 }
 
@@ -22,6 +25,15 @@ const mutations = {
   SET_NAME: (state, name) => {
     state.name = name
   },
+  SET_MAJOR: (state, major) => {
+    state.major = major
+  },
+  SET_UNIVERSITY: (state, university) => {
+    state.university = university
+  },
+  SET_ROLES: (state, roles) => {
+    state.roles = roles
+  },
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar
   }
@@ -30,12 +42,12 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    const { username, password } = userInfo
+    const { username, password, identity } = userInfo
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
+        commit('SET_TOKEN', 'admin-token')//data.token
+        setToken('admin-token')
         resolve()
       }).catch(error => {
         reject(error)
@@ -46,18 +58,27 @@ const actions = {
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
-      getInfo(state.token).then(response => {
-        const { data } = response
-
-        if (!data) {
+      //getInfo(state.token).then(response => {
+      getInfo().then(response => {
+        const accountInfo = response.accountInfo
+        if (!accountInfo) {
           return reject('Verification failed, please Login again.')
         }
-
-        const { name, avatar } = data
-
-        commit('SET_NAME', name)
-        commit('SET_AVATAR', avatar)
-        resolve(data)
+        const { username, identity, university, major } = accountInfo
+        let role = ''
+        if (identity === 0) { role = 'student' } else { role = 'teacher' }
+        const res = {
+          username: username,
+          roles: [role],
+          university: university,
+          major: major
+        }
+        commit('SET_NAME', username)
+        commit('SET_MAJOR', major)
+        commit('SET_UNIVERSITY', university)
+        commit('SET_ROLES', role)
+        commit('SET_AVATAR', 'api/load_image')
+        resolve(res)
       }).catch(error => {
         reject(error)
       })
