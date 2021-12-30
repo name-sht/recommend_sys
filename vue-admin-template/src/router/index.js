@@ -89,7 +89,21 @@ export const asyncRoutes = [
       }
     ]
   },
-
+  {
+    path: '/agreement',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'agreement',
+        component: () => import('@/views/agreement/index'),
+        meta: { title: '诚信协议',
+          icon: 'form',
+          roles: ['student']
+        }
+      }
+    ]
+  },
   {
     path: '/details',
     component: Layout,

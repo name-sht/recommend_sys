@@ -49,6 +49,7 @@ export default {
     admitted(id) {
       new Promise((resolve, reject) => {
         postData({ applicationID: id }).then(response => {
+          location.reload()
           resolve()
         }).catch(error => {
           reject(error)

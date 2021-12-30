@@ -9,10 +9,29 @@
     <el-dialog title="新增志愿" :visible.sync="dialogVisible" width="35%">
       <el-form label-width="90px" :label-position="left">
         <el-form-item label="志愿学校">
-          <el-input v-model="input.university"></el-input>
+          <el-select v-model="input.university" placeholder="please select">
+            <el-option label="复旦大学" value="复旦大学" />
+            <el-option label="同济大学" value="同济大学" />
+            <el-option label="上海交通大学" value="上海交通大学" />
+            <el-option label="华东理工大学" value="华东理工大学" />
+            <el-option label="上海理工大学" value="上海理工大学" />
+            <el-option label="上海海事大学" value="上海海事大学" />
+            <el-option label="东华大学" value="东华大学" />
+            <el-option label="上海海洋大学" value="上海海洋大学" />
+            <el-option label="清华大学" value="清华大学" />
+          </el-select>
         </el-form-item>
         <el-form-item label="志愿专业">
-          <el-input v-model="input.major"></el-input>
+          <el-select v-model="input.major" placeholder="please select">
+            <el-option label="软件工程" value="软件工程" />
+            <el-option label="炼金工程" value="炼金工程" />
+            <el-option label="中国现当代文学" value="中国现当代文学" />
+            <el-option label="无线电物理" value="无线电物理" />
+            <el-option label="逻辑学" value="逻辑学" />
+            <el-option label="体育教育训练学" value="体育教育训练学" />
+            <el-option label="西班牙语语言文学" value="西班牙语语言文学" />
+            <el-option label="运筹学与控制论" value="运筹学与控制论" />
+          </el-select>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -40,10 +59,29 @@
     <el-dialog title="修改志愿信息：" :visible.sync="changeBranch" width="35%">
       <el-form label-width="90px" :label-position="left">
         <el-form-item label="志愿学校">
-          <el-input v-model="form.university" class="inputId"></el-input>
+          <el-select v-model="form.university" placeholder="please select">
+            <el-option label="复旦大学" value="复旦大学" />
+            <el-option label="同济大学" value="同济大学" />
+            <el-option label="上海交通大学" value="上海交通大学" />
+            <el-option label="华东理工大学" value="华东理工大学" />
+            <el-option label="上海理工大学" value="上海理工大学" />
+            <el-option label="上海海事大学" value="上海海事大学" />
+            <el-option label="东华大学" value="东华大学" />
+            <el-option label="上海海洋大学" value="上海海洋大学" />
+            <el-option label="清华大学" value="清华大学" />
+          </el-select>
         </el-form-item>
         <el-form-item label="志愿专业">
-          <el-input v-model="form.major" class="inputName"></el-input>
+          <el-select v-model="form.major" placeholder="please select">
+            <el-option label="软件工程" value="软件工程" />
+            <el-option label="炼金工程" value="炼金工程" />
+            <el-option label="中国现当代文学" value="中国现当代文学" />
+            <el-option label="无线电物理" value="无线电物理" />
+            <el-option label="逻辑学" value="逻辑学" />
+            <el-option label="体育教育训练学" value="体育教育训练学" />
+            <el-option label="西班牙语语言文学" value="西班牙语语言文学" />
+            <el-option label="运筹学与控制论" value="运筹学与控制论" />
+          </el-select>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -103,6 +141,7 @@ export default {
       }
       new Promise((resolve, reject) => {
         putData({ stuApplication: pData }).then(response => {
+          location.reload()
           resolve()
         }).catch(error => {
           reject(error)
@@ -114,6 +153,7 @@ export default {
     remove(id) {
       new Promise((resolve, reject) => {
         deleteData({ applicationID: id }).then(response => {
+          location.reload()
           resolve()
         }).catch(error => {
           reject(error)
@@ -134,6 +174,7 @@ export default {
       }
       new Promise((resolve, reject) => {
         postData({ stuApplication: pData }).then(response => {
+          location.reload()
           resolve()
         }).catch(error => {
           reject(error)

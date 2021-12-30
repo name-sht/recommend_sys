@@ -11,13 +11,13 @@
         <el-input v-model="form.namePinYin" />
       </el-form-item>
       <el-form-item label="现役类型">
-        <el-select v-model="form.militaryType" placeholder="please select your zone">
+        <el-select v-model="form.militaryType" placeholder="please select">
           <el-option label="非军人" value="1" />
           <el-option label="军人" value="2" />
         </el-select>
       </el-form-item>
       <el-form-item label="政治面貌">
-        <el-select v-model="form.politicalStatus" placeholder="please select your zone">
+        <el-select v-model="form.politicalStatus" placeholder="please select">
           <el-option label="共青团员" value="1" />
           <el-option label="群众" value="2" />
           <el-option label="共产党员" value="3" />
@@ -25,7 +25,7 @@
         </el-select>
       </el-form-item>
       <el-form-item label="婚姻状态">
-        <el-select v-model="form.martialStatus" placeholder="please select your zone">
+        <el-select v-model="form.martialStatus" placeholder="please select">
           <el-option label="已婚" value="1" />
           <el-option label="未婚" value="2" />
           <el-option label="离异" value="3" />
