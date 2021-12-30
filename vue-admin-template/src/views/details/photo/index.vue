@@ -1,6 +1,6 @@
 <template>
   <div id="apps">
-    <img src="api/load_image" style="width:100px; height:130px">
+    <img :src="photoUrl" style="width:100px; height:130px">
     <div class="text">
       <br>必须上传本人近期一寸正面免冠彩色头像照片（参照居民身份证照片样式） :<br>
       1.格式 jpg 或 jpeg，大小 20K - 500K<br>
@@ -13,7 +13,6 @@
       class="upload-demo"
       accept="image/jpeg,image/jpg,image/png"
       action
-      :on-preview="handlePreview"
       :http-request="uploadFile"
       :show-file-list="false"
     >
@@ -25,6 +24,7 @@
 import { postData } from '@/api/photo'
 
 export default {
+  inject: ['reload'],
   data() {
     return {
       photoUrl: '',
@@ -32,23 +32,26 @@ export default {
     }
   },
   created() {
-    this.photoUrl = 'api/load_image'
+    this.getData()
   },
   methods: {
-    handlePreview(file) {
-      console.log(file)
+    getData() {
+      const url = 'api/load_image' + '?t=' + Math.random() * 100000
+
+      this.photoUrl = url
     },
     uploadFile(file) {
       const formDatas = new FormData()
       formDatas.append('image', file.file)
       new Promise((resolve, reject) => {
         postData(formDatas).then(response => {
+          location.reload()
           resolve()
         }).catch(error => {
           reject(error)
         })
       })
-      location.reload()
+      this.$message('submit!')
     }
   }
 

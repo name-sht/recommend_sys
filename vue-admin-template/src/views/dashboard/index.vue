@@ -14,8 +14,18 @@ export default {
     ...mapGetters([
       'name',
       'university',
-      'major'
+      'major',
+      'roles'
     ])
+  },
+  created() {
+    this.log()
+  },
+  methods: {
+    log(){
+      console.log(1)
+      console.log(this.image)
+    }
   }
 }
 </script>

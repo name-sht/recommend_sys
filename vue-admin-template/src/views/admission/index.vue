@@ -17,7 +17,7 @@
             尚未录取</div>
           <div v-else-if="props.row.isConfirmed === 1">
             已接受录取</div>
-          <div v-else-if= "get_admit===true">
+          <div v-else-if="get_admit===true">
             已接受其他志愿</div>
           <div v-else>
             <el-button type="primary" size="mini" @click="admitted(props.row.applicationID)">接受</el-button>
@@ -44,7 +44,7 @@ export default {
         (acc, cur) => (cur + acc), 0
       )
       console.log(c)
-      if (c === 1) { return true } else { return false }
+      return c === 1
     }
   },
   data() {

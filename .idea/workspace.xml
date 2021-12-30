@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71aad8cc-a910-433b-86d3-4d2349b9e737" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vue-admin-template/src/assets/h1.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue-admin-template/src/views/dashboard/h1.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recommend_system.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/store/modules/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/store/modules/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/admission/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/admission/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/dashboard/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/dashboard/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/details/photo/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/details/photo/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/teacher/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/teacher/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-admin-template/src/views/dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,14 +73,32 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\all_file\recommend_system\vue-admin-template\src\views\dashboard" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\all_file\recommend_system\vue-admin-template\src\assets" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\store\modules" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\store" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\api" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,6 +112,9 @@
       <workItem from="1640423709454" duration="38669000" />
       <workItem from="1640504654327" duration="8371000" />
       <workItem from="1640608547379" duration="39525000" />
+      <workItem from="1640752501848" duration="1001000" />
+      <workItem from="1640770285421" duration="1807000" />
+      <workItem from="1640851767339" duration="17460000" />
     </task>
     <servers />
   </component>
@@ -104,25 +134,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="270" y="57" key="SettingsEditor" timestamp="1640863666137">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1640863666137" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1640425842282">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1640425842282" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1640433361622">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1640870465708">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1640433361622" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/vue-admin-template/src/views/dashboard/index.vue</url>
-          <line>22</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1640870465708" />
   </component>
 </project>

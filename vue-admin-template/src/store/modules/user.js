@@ -1,7 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
-
+import { getData } from '@/api/photo'
 const getDefaultState = () => {
   return {
     token: getToken(),
@@ -9,7 +9,8 @@ const getDefaultState = () => {
     avatar: '',
     major: '',
     university: '',
-    roles: []
+    roles: [],
+    permission_routes: ''
   }
 }
 
@@ -59,6 +60,9 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       //getInfo(state.token).then(response => {
+      getData().then(response => {
+        console.log(response)
+      })
       getInfo().then(response => {
         const accountInfo = response.accountInfo
         if (!accountInfo) {
@@ -77,7 +81,7 @@ const actions = {
         commit('SET_MAJOR', major)
         commit('SET_UNIVERSITY', university)
         commit('SET_ROLES', role)
-        commit('SET_AVATAR', 'api/load_image')
+        commit('SET_AVATAR', 'api/load_image' + '?t=' + Math.random() * 100000)
         resolve(res)
       }).catch(error => {
         reject(error)

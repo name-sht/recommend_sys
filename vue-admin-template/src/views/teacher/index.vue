@@ -3,8 +3,8 @@
     <el-table v-loading="loading" :data="trData" stripe style="width: 100%" row-class-name="hidden">
       <el-table-column label="序号" type="index" width="100"></el-table-column>
       <el-table-column prop="username" label="学生姓名" ></el-table-column>
-      <el-table-column prop="university" label="推荐单位" ></el-table-column>
-      <el-table-column prop="major" label="本科专业" ></el-table-column>
+      <el-table-column prop="originalUniversity" label="推荐单位" ></el-table-column>
+      <el-table-column prop="originalMajor" label="本科专业" ></el-table-column>
       <el-table-column label="操作">
         <template slot-scope="props">
           <div v-if="props.row.isAdmitted === 1">
