@@ -45,8 +45,12 @@
         <el-radio v-model="loginForm.identity" :label="0">学生</el-radio>
         <el-radio v-model="loginForm.identity" :label="1">教师</el-radio>
       </el-form-item>
-
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+      <el-form-item>
+        <el-row>
+          <el-button :loading="loading" type="primary" style="width:48.8%;" @click.native.prevent="handleLogin">登录</el-button>
+          <el-button :loading="loading"  style="width:48.8%;" @click.native.prevent="regist">注册</el-button>
+        </el-row>
+      </el-form-item>
     </el-form>
   </div>
 </template>
@@ -113,7 +117,7 @@ export default {
       })
     },
     regist() {
-      window.location.href = '../../public/html/register.html'
+      this.$router.push('register')
     }
   }
 }
