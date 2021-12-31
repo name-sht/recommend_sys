@@ -59,7 +59,7 @@
           </el-select>
         </el-row>
       </el-form-item>
-      <el-form-item label="档案地址">
+      <el-form-item label="户籍地址">
         <el-row>
           <el-select v-model="form.nativeLocationProvince" placeholder="请选择" @change="selectNativeProvince">
             <el-option

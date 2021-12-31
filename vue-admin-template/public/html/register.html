@@ -87,11 +87,34 @@
           </tr>
           <tr>
             <td class="td_left"><label for="university">学校</label></td>
-            <td class="td_right"><input type="text" name="university" id="university" placeholder="请输入学校"></td>
+            <td class="td_right">
+              <select  name="university" id="university" >
+                <option value=""></option>
+                <option  value="复旦大学" >复旦大学</option>
+                <option value="同济大学" >同济大学</option>
+                <option value="上海交通大学" >上海交通大学</option>
+                <option value="华东理工大学" >华东理工大学</option>
+                <option value="上海理工大学" >上海理工大学</option>
+                <option value="上海海事大学" >上海海事大学</option>
+                <option value="东华大学" >东华大学</option>
+                <option value="上海海洋大学" >上海海洋大学</option>
+                <option value="清华大学" >清华大学</option>
+            </select>
+            </td>
           </tr>
           <tr>
-            <td class="td_left"><label for="major">学校</label></td>
-            <td class="td_right"><input type="text" name="major" id="major" placeholder="请输入专业"></td>
+            <td class="td_left"><label for="major">专业</label></td>
+            <td class="td_right"><select type="text" name="major" id="major">
+              <option value=""></option>
+              <option value="软件工程" >软件工程 </option>
+              <option value="炼金工程" >炼金工程 </option>
+              <option value="中国现当代文学" >中国现当代文学 </option>
+              <option value="无线电物理" >无线电物理 </option>
+              <option value="逻辑学" >逻辑学 </option>
+              <option value="体育教育训练学" >体育教育训练学 </option>
+              <option value="西班牙语语言文学" >西班牙语语言文学 </option>
+              <option value="运筹学与控制论" >运筹学与控制论 </option>
+            </select></td>
           </tr>
           <tr>
             <td colspan="2" align="center"><input type="button" id="btn_sub" value="注册" onClick="regist()"></td>

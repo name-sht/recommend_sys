@@ -17,15 +17,6 @@ export default {
       'major',
       'roles'
     ])
-  },
-  created() {
-    this.log()
-  },
-  methods: {
-    log(){
-      console.log(1)
-      console.log(this.image)
-    }
   }
 }
 </script>
