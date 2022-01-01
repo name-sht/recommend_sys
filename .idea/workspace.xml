@@ -26,15 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71aad8cc-a910-433b-86d3-4d2349b9e737" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vue-admin-template/src/api/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue-admin-template/src/views/register/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/README-zh.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/permission.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/permission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/register/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/register/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,19 +93,6 @@
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\api" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -129,7 +109,8 @@
       <workItem from="1640770285421" duration="1807000" />
       <workItem from="1640851767339" duration="27875000" />
       <workItem from="1640942491484" duration="7508000" />
-      <workItem from="1640962890770" duration="5538000" />
+      <workItem from="1640962890770" duration="6629000" />
+      <workItem from="1641040687861" duration="674000" />
     </task>
     <servers />
   </component>

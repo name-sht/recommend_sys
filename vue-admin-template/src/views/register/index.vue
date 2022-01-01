@@ -39,8 +39,8 @@
         </el-select>
       </el-form-item>
       <el-form-item label="身份">
-        <el-radio v-model="form.gender" label=0>学生</el-radio>
-        <el-radio v-model="form.gender" label=1>老师</el-radio>
+        <el-radio v-model="form.identity" label=0>学生</el-radio>
+        <el-radio v-model="form.identity" label=1>老师</el-radio>
       </el-form-item>
       <el-form-item>
         <el-row>
@@ -74,7 +74,7 @@ export default {
         phoneNumber: '',
         university: '',
         major: '',
-        identity: 0
+        identity: '0'
       }
     }
   },
@@ -87,12 +87,13 @@ export default {
         major,
         identity
       } = this.form
+      var i=+identity
       const pData = { username: username,
         password: password,
         phoneNumber: phoneNumber,
         university: university,
         major: major,
-        identity: identity }
+        identity: i }
       new Promise((resolve, reject) => {
         postData(pData).then(response => {
           resolve()
