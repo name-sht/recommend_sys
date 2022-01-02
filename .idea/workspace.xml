@@ -27,7 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="71aad8cc-a910-433b-86d3-4d2349b9e737" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/register/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/register/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-admin-template/src/views/login/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,15 +84,28 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\all_file\recommend_system\vue-admin-template\src\views\dashboard" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\assets" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\store\modules" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\store" />
       <recent name="E:\all_file\recommend_system\vue-admin-template\src\api" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\all_file\recommend_system\vue-admin-template\src\views\dashboard" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,6 +125,8 @@
       <workItem from="1640942491484" duration="7508000" />
       <workItem from="1640962890770" duration="6629000" />
       <workItem from="1641040687861" duration="674000" />
+      <workItem from="1641093423867" duration="636000" />
+      <workItem from="1641108566012" duration="1760000" />
     </task>
     <servers />
   </component>

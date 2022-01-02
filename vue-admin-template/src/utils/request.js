@@ -13,10 +13,10 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
 
- //   if (store.getters.token) {
-      // please modify it according to the actual situation
- //     config.headers['X-Token'] = getToken()
- //  }
+    //   if (store.getters.token) {
+    // please modify it according to the actual situation
+    //     config.headers['X-Token'] = getToken()
+    //  }
     return config
   },
   error => {
@@ -42,9 +42,8 @@ service.interceptors.response.use(
     return response.data
   },
   error => {
-    console.log('err' + error) // for debug
     Message({
-      message: error.message,
+      message: error.response.data.message,
       type: 'error',
       duration: 5 * 1000
     })
